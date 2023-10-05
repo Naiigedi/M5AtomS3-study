@@ -1,3 +1,5 @@
+//　タクトスイッチはGPIO7とGNDに接続
+//  LEDのアノード側はGPIO6に接続
 
 #include "M5AtomS3.h"
 
@@ -13,11 +15,11 @@ void setup() {
 }
 
 void loop() {
-  if(digitalRead(Button_PIN)==0){
-    digitalWrite(LED_PIN, HIGH);
+  if(digitalRead(Button_PIN)==0){ 
+    digitalWrite(LED_PIN, HIGH); //タクトスイッチが押されたとき、点灯
   } 
   else{
-    digitalWrite(LED_PIN, LOW);  
+    digitalWrite(LED_PIN, LOW);  //それ以外は消灯
   }
   delay(100);
   }
