@@ -1,3 +1,4 @@
+//  LEDのアノード側はGPIO6に接続
 
 #include "M5AtomS3.h"
 
