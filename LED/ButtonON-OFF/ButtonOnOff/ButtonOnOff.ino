@@ -10,7 +10,7 @@ void setup() {
   //LED出力ピンを出力モードにする
   pinMode(LED_PIN, OUTPUT); 
   pinMode(Button_PIN, INPUT_PULLUP);
-  M5.begin(true, true, false,true);
+  M5.begin();
   digitalWrite(LED_PIN, LOW);       //出力初期化（LED消灯）
 }
 

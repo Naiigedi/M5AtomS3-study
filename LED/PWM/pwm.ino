@@ -7,7 +7,7 @@ const uint8_t LED_PIN = 6;  // LED出力に使用するGPIO PIN番号
 void setup() {
   //LED出力ピンを出力モードにする
   pinMode(LED_PIN, OUTPUT); 
-  M5.begin(true, true, false,true);
+  M5.begin();
 
   // PWM出力初期設定
   ledcSetup(1, 1000, 10);   // PWM初期設定（ﾁｬﾝﾈﾙ, 周波数Hz, bit数）
