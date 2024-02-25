@@ -15,9 +15,12 @@ void setup() {
 void loop() {
   float analogValue = analogRead(ADC_PIN);    // ADの値を取得
   float Lux = analogValue * K_val * ADCV / ADC / RESISTOR;  //ADの値を換算
+  char buff[10];
+  char buff_all[20];
   M5.Lcd.clear();                       // 画面リセット
-  //M5.Lcd.printf("%f [Lux]", Lux);
-  M5.Lcd.drawFloat(Lux, 3, 10, 50, 4);  // (数値, 小数点以下の個数,  x座標, y座標, フォント)
+  sprintf(buff, "%5.2f", Lux);
+  snprintf(buff_all, 15,  "%s%s", buff, "[Lux]" );
+  M5.Lcd.drawString(buff_all, 10, 50, 2);
   Serial.println(analogValue);          // debug用としてRawData抽出
   delay(1000);
 }
