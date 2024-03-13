@@ -11,6 +11,7 @@ const float K_val = 2200000;    // 光電流[IuA] vs 照度[Lux] のフィッテ
 void setup() {
   pinMode(ADC_PIN, INPUT);
   pinMode(Button_PIN, INPUT_PULLUP);
+  pinMode(LED_PIN, OUTPUT);
   ledcSetup(1, 1000, 10);   // PWM初期設定（ﾁｬﾝﾈﾙ, 周波数Hz, bit数）
   ledcAttachPin(LED_PIN, 1); // PWMﾁｬﾝﾈﾙ割り当て（端子番号, ﾁｬﾝﾈﾙ)
   ledcWrite(1, 0);        // PWM出力開始（ﾁｬﾝﾈﾙ、Duty比：MAXはbit数の分解能）
