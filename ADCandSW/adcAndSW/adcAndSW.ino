@@ -39,7 +39,7 @@ void loop() {
   if(digitalRead(Button_PIN)==0){
     Serial.println(sval);          // debug用としてRawData抽出
   }
-  if(Lux < 10){
+  if(Lux < 5){
     ledcWrite(1, 512);        // PWM出力開始（ﾁｬﾝﾈﾙ、Duty比：MAXはbit数の分解能）
   }
   else{
